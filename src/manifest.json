@@ -1,0 +1,17 @@
+{
+  "compatibleVersion": 3,
+  "bundleVersion": 1,
+  "commands": [
+    {
+      "name": "Squash",
+      "identifier": "squash-dat-image",
+      "script": "./main.js"
+    }
+  ],
+  "menu": {
+    "isRoot": true,
+    "items": [
+      "squash-dat-image"
+    ]
+  }
+}

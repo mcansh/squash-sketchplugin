@@ -1,0 +1,11 @@
+# build artifacts
+*.sketchplugin/Contents/Sketch
+*.sketchplugin/Contents/Resources/_webpack_images
+
+# npm
+node_modules
+.npm
+*.log
+
+# mac
+.DS_Store

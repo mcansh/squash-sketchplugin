@@ -1,13 +1,12 @@
 {
   "name": "squash-sketchplugin",
   "version": "1.0.0",
-  "description": "A design spec plugin for sketch",
   "scripts": {
-    "test": "eslint ./src",
-    "build": "skpm build",
-    "watch": "skpm build --watch",
-    "publish": "skpm publish",
-    "link": "skpm link"
+    "build": "skpm-build",
+    "watch": "skpm-build --watch",
+    "start": "skpm-build --watch --run",
+    "postinstall": "npm run build && skpm-link",
+    "lint": "eslint ./src"
   },
   "repository": "git@github.com:mcansh/squash-sketchplugin.git",
   "author": "Logan McAnsh <logan@mcan.sh> (https://mcan.sh)",
@@ -16,16 +15,21 @@
     "sketch": ">=3.0"
   },
   "devDependencies": {
-    "eslint": "^4.6.1",
-    "eslint-config-airbnb-base": "^12.0.0",
-    "eslint-plugin-import": "^2.7.0",
-    "skpm": "^0.10.5"
+    "@skpm/builder": "^0.4.0",
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-no-not-accumulator-reassign": "^0.1.0",
+    "eslint-plugin-prettier": "^2.6.0"
   },
   "skpm": {
     "manifest": "src/manifest.json",
-    "main": "squash-sketchplugin.sketchplugin",
-    "name": "Squash"
+    "main": "squash.sketchplugin",
+    "name": "Squash",
+    "assets": [
+      "assets/**/*"
+    ]
   },
-  "dependencies": {},
-  "main": "squash-sketchplugin.sketchplugin"
+  "main": "squash.sketchplugin"
 }

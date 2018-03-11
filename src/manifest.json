@@ -1,6 +1,7 @@
 {
   "compatibleVersion": 3,
   "bundleVersion": 1,
+  "icon": "icon.png",
   "commands": [
     {
       "name": "Squash",
@@ -10,6 +11,8 @@
   ],
   "menu": {
     "isRoot": true,
-    "items": ["squash-dat-image"]
+    "items": [
+      "squash-dat-image"
+    ]
   }
 }

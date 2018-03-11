@@ -1,14 +1,12 @@
 module.exports = {
-  "extends": "airbnb-base",
-  "plugins": [
-    "import"
-  ],
-  "rules": {
-    "no-console": 0,
-    "no-undef": 1,
-    "max-len": 0,
-    "function-paren-newline": 0,
-    "no-undef": 0,
-    "no-underscore-dangle": 0,
+  extends: ['airbnb-base', 'plugin:import/errors', 'prettier'],
+  plugins: ['no-not-accumulator-reassign', 'prettier'],
+  env: {
+    node: true
+  },
+  rules: {
+    'no-not-accumulator-reassign/no-not-accumulator-reassign': [2, ['reduce'], {props: true}],
+    'no-undef': 1,
+    'no-underscore-dangle': 0
   }
-};
+}

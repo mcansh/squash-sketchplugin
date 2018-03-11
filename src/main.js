@@ -1,5 +1,5 @@
-function showMessage(txt, timeout = 5) {
-  NSApplication.sharedApplication().orderedDocuments().firstObject().displayMessage_timeout(txt, timeout);
+const showMessage = (ctx, text) => {
+  ctx.document.showMessage(text);
 }
 
 function runSquash(context, files, hidden) {
@@ -9,7 +9,7 @@ function runSquash(context, files, hidden) {
   const bundleIdentifier = 'com.realmacsoftware.squash';
   const appURL = workspace.URLForApplicationWithBundleIdentifier(bundleIdentifier);
   if (!appURL) {
-    showMessage('Squash not installed', 10);
+    showMessage(context, 'Squash not installed');
     workspace.openURL(NSURL.URLWithString('https://realmacsoftware.com/squash/?sketch'));
     return;
   }
@@ -53,8 +53,10 @@ function openFileDialog(path) {
 
 function exportAndCompress(context) {
   const potentialExports = context.document.allExportableLayers();
-  if (!potentialExports.count()) showMessage('No exportable layers in the document');
-  showMessage('Exporting assets to Squash');
+  if (!potentialExports.count()) {
+    showMessage(context, 'No exportable layers in the document');
+  }
+  showMessage(context, 'Exporting assets to Squash');
   const exportFolder = openFileDialog();
   if (exportFolder) {
     // TODO: If there's any exportable layer selected, only export those. Otherwise, export everything under the sun

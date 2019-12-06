@@ -11,8 +11,6 @@
   ],
   "menu": {
     "isRoot": true,
-    "items": [
-      "squash-dat-image"
-    ]
+    "items": ["squash-dat-image"]
   }
 }

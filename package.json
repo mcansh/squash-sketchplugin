@@ -1,6 +1,6 @@
 {
   "name": "squash-sketchplugin",
-  "version": "1.0.1",
+  "version": "1.0.2-canary.0",
   "scripts": {
     "build": "skpm-build",
     "watch": "skpm-build --watch",
@@ -15,13 +15,12 @@
     "sketch": ">=49.0"
   },
   "skpm": {
-    "name": "Squash",
     "manifest": "src/manifest.json",
     "main": "squash.sketchplugin",
+    "name": "Squash",
     "assets": [
       "assets/**/*"
-    ],
-    "sketch-assets-file": "sketch-assets/icons.sketch"
+    ]
   },
   "devDependencies": {
     "@skpm/builder": "^0.7.4",
@@ -32,14 +31,6 @@
     "eslint-plugin-no-not-accumulator-reassign": "^0.1.0",
     "eslint-plugin-prettier": "^3.1.1",
     "skpm": "1.3.1"
-  },
-  "skpm": {
-    "manifest": "src/manifest.json",
-    "main": "squash.sketchplugin",
-    "name": "Squash",
-    "assets": [
-      "assets/**/*"
-    ]
   },
   "main": "squash.sketchplugin"
 }
